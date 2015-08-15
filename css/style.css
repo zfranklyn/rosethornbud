@@ -1,1 +1,24 @@
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);*/
+
+#nav{
+	position:fixed;
+	width:100%;
+	background-color: #E2474A;
+	height:2.8em;
+}
+
+#logo{
+	opacity:0.8;
+	display:block;
+	height:40px;
+	margin: auto;
+}
+
+#logo:hover{
+	opacity:1.0;
+}
+
+#content{
+	background-color:#F2F2F2;
+	min-height:200%;
+}
