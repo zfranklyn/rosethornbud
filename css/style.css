@@ -2,6 +2,7 @@
 
 #nav{
 	position:fixed;
+	display:block;
 	width:100%;
 	background-color: #E2474A;
 	height:2.8em;
@@ -18,7 +19,25 @@
 	opacity:1.0;
 }
 
-#content{
+body{
 	background-color:#F2F2F2;
+}
+
+#content{
+	padding-top:2.8em;
 	min-height:200%;
+}
+
+.post{
+	background-color: white;
+	display:block;
+	height:400px;
+}
+
+.petal{
+	text-align: center;
+}
+
+.thorn{
+	margin: 1em auto;
 }
