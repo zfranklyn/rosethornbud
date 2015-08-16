@@ -15,6 +15,12 @@
 	margin: auto;
 }
 
+#add{
+	position:absolute;
+	opacity:0.8;
+	height:28px;
+}
+
 #logo:hover{
 	opacity:1.0;
 }
@@ -25,19 +31,26 @@ body{
 
 #content{
 	padding-top:2.8em;
-	min-height:200%;
+	clear:both;
+	overflow:auto;
 }
 
 .post{
+	margin: 1em;
+	padding:.5em;
 	background-color: white;
 	display:block;
-	height:400px;
+	clear:both;
+	overflow:auto;
 }
 
 .petal{
-	text-align: center;
+	text-align: left;
+	font-size:.9em;
+	padding: 1em;
 }
 
 .thorn{
-	margin: 1em auto;
+	border-top: solid 1px #F2F2F2;
+	border-bottom: solid 1px #F2F2F2;
 }
