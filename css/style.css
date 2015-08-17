@@ -36,12 +36,17 @@ body{
 }
 
 .post{
-	margin: 1em;
+	margin: 1em auto;
 	padding:.5em;
 	background-color: white;
 	display:block;
 	clear:both;
 	overflow:auto;
+	box-sizing:border-box;
+}
+
+.post:hover{
+	background-color:#FAFAFA;
 }
 
 .petal{
