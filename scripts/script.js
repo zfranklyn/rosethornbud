@@ -61,7 +61,6 @@
     				};
 
 	storePosts(postData);
-
     function getStoredPosts() {
         if (!localStorage.posts) {
             // default to empty array

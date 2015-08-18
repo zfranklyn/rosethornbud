@@ -1,27 +1,20 @@
 <html>
 	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<!-- <link rel="stylesheet" type="text/css" href="css/grids-responsive-min.css"> -->
-		<link rel="stylesheet" type="text/css" href="css/pure-min.css">
-		<!--[if lte IE 8]>
-		    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-		<![endif]-->
-		<!--[if gt IE 8]><!-->
-		    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-		<!--<![endif]-->
+		<link rel="stylesheet" type="text/css" href="css/grids-responsive-min.css">
 	</head>
 
 	<body>
 		<div id="nav">
-			<object data="img/roselogo.svg" type="image/svg+xml" id="logo"></object>
+			<object data="img/roselogo.svg" type="image/svg+xml" id="logo" class=""></object>
 			<!-- <object data="img/add.svg" type="image/svg+xml" id="add"></object> -->
 		</div>
 
 	    <div id="content" class="pure-g">
 
 	    </div>
-
 
 <!-- HANDLEBARS TEMPLATES -->
         <script type="text/x-handlebars-template" id="post-template">
@@ -30,16 +23,25 @@
                 {{! this.id represents this question&#39;s identifier in
                     localStorage. }}
                 <div class="post pure-u-1 pure-u-md-1-3" id="{{ this.id }}">
-                    <div class="petal rose">{{ this.rose }}</div>
-                    <div class="petal thorn">{{ this.thorn }}</div>
-                    <div class="petal bud">{{ this.bud }}</div>
+                    <div class="petal rose">
+						<object data="img/rose.svg" type="image/svg+xml" id="rose" class="posticon"></object>
+                    	<span class="">{{ this.rose }}</span>
+                    </div>
+                	<div class="petal thorn">
+                    	<object data="img/thorn.svg" type="image/svg+xml" id="thorn" class="posticon"></object>
+                    	<span class="">{{ this.thorn }}</span>
+                    </div>
+                    <div class="petal bud">
+                    	<object data="img/bud.svg" type="image/svg+xml" id="bud" class="posticon"></object>
+                    	<span class="">{{ this.bud }}</span>
+                    </div>
                 </div>
                 {{/each}}
             {{else}}
                 {{! no questions exist; display appropriate message }}
-                <div class="post pure-u-1 pure-u-md-1-3">
+                <span class="post pure-u-1 pure-u-md-1-3">
                     <p>No questions could be found.</p>
-                </div>
+                </span>
             {{/if}}
         </script>
 
