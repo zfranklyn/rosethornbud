@@ -4,6 +4,9 @@
 	bud green: #8CC252;
 	text gray: #9e9e9e;
 */
+#main_container{
+	width:100%;
+}
 
 body{
 	background-color:#F2F2F2;
