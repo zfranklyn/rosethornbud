@@ -221,7 +221,10 @@ window.addEventListener("click",function(e){
 
 
 
-$('.modal-trigger').leanModal();
+$('.modal-trigger').leanModal({
+	ready: function(){$("body").addClass("noscroll")},
+	complete: function(){$("body").removeClass("noscroll")}
+});
 
 
 
