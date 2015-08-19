@@ -16,64 +16,59 @@
 	</head>
 
 	<body>
-	<div id="main_container">
+		<div id="main_container">
+			<div class="navbar-fixed">
+				<nav>
+					<object data="img/roselogo.svg" type="image/svg+xml" id="logo" class="brand-logo center"></object>
+				</nav>
+			</div>
 
+			<a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" id="new_post_button" href="#newpost"><i class="material-icons">add</i></a>
 
-		<div class="navbar-fixed">
-			<nav>
-				<object data="img/roselogo.svg" type="image/svg+xml" id="logo" class="brand-logo center"></object>
-			</nav>
+		    <div id="content">
+		    </div>
+
+		    <div class="modal" id="newpost">
+				<div class="card">
+		            <form class="form" id="post-form">
+		            	<div class="card-content">
+		                	<span>Welcome to your garden!</span>
+		            	</div>
+		                <div class="container card-content left">
+			                <div class="input-field col">
+			                	<span class="icon red-text">ROSE</span>
+			                    <textarea 
+			                    	id="text_rose" 
+			                    	class="materialize-textarea"
+			                    	placeholder="What went well today?"></textarea>
+			                </div>
+
+			                <div class="input-field col">
+			                	<span class="icon brown-text">THORN</span>
+			                    <textarea 
+			                    	id="text_thorn" 
+			                    	class="materialize-textarea" 
+			                    	placeholder="What didn't go so well today??"></textarea>
+			                </div>
+
+			                <div class="input-field col">
+			                	<span class="icon green-text">BUD</span>
+			                    <textarea 
+			                    	id="text_bud" 
+			                    	class="materialize-textarea" 
+			                    	placeholder="What are you looking forward to?"></textarea>
+			                </div>
+
+			                <input type="submit" class="btn right" value="Submit" /> 
+		                </div>
+
+		                
+		            </form>
+
+	            </div>
+		    </div>
+
 		</div>
-
-		<a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" id="new_post_button" href="#newpost"><i class="material-icons">add</i></a>
-
-
-	    <div id="content" class="pure-g">
-	    </div>
-
-	    <div class="modal" id="newpost">
-			<div class="card">
-	            <form class="form" id="post-form">
-	            	<div class="card-content">
-	                	<span>Welcome to your garden!</span>
-	            	</div>
-	                <div class="container card-content left">
-		                <div class="input-field col">
-		                	<span class="icon red-text">ROSE</span>
-		                    <textarea 
-		                    	id="text_rose" 
-		                    	class="materialize-textarea"
-		                    	placeholder="What went well today?"></textarea>
-		                </div>
-
-		                <div class="input-field col">
-		                	<span class="icon brown-text">THORN</span>
-		                    <textarea 
-		                    	id="text_thorn" 
-		                    	class="materialize-textarea" 
-		                    	placeholder="What didn't go so well today??"></textarea>
-		                </div>
-
-		                <div class="input-field col">
-		                	<span class="icon green-text">BUD</span>
-		                    <textarea 
-		                    	id="text_bud" 
-		                    	class="materialize-textarea" 
-		                    	placeholder="What are you looking forward to?"></textarea>
-		                </div>
-
-		                <input type="submit" class="btn right" value="Submit" /> 
-	                </div>
-
-	                
-	            </form>
-
-            </div>
-
-
-	    </div>
-
-	</div>
 	</body>
 
 <!-- HANDLEBARS TEMPLATES -->
@@ -107,31 +102,7 @@
                     <p>No questions could be found.</p>
                 </span>
             {{/if}}
-        </script>
-
-        <!-- template to display question form in #main-panel tag -->
-        <script type="text/x-handlebars-template" id="post-submission-template">
-            <form class="cf" id="submission-form">
-                <h2>Hey there!</h2>
-                <p>Welcome to the garden!</p>
-                <div>
-                    <textarea rows="5" cols="40" name="rose"
-                        placeholder="What was your Rose today?"></textarea>
-                </div>
-
-                <div>
-                    <textarea rows="5" cols="40" name="thorn"
-                        placeholder="What was your Thorn today?"></textarea>
-                </div>
-
-                <div>
-                    <textarea rows="5" cols="40" name="bud"
-                        placeholder="What is your Bud today?"></textarea>
-                </div>
-
-                <input type="submit" class="btn" value="Submit" /> 
-            </form>
-        </script>        
+        </script>    
 
 		<script src="js/handlebars-v3.0.1.js"></script>
 		<script src="js/script.js"></script>  	

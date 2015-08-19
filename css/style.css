@@ -58,7 +58,7 @@ body{
 }
 
 .noscroll{
-	overflow:hidden;
+	overflow-y:hidden;
 }
 
 .overlay{
