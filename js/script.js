@@ -1,8 +1,8 @@
 (function(window, document, undefined) {
-
-	var postDeck = $("#content")[0];
+	var postDeck = $("#content");
 	var postTemplate = $("#post-template")[0];
 	var logo = $("#logo")[0];
+	var newPostCard = $("#new-post-card");
 
     var templates = {
         renderPosts: Handlebars.compile(postTemplate.innerHTML)
@@ -204,7 +204,7 @@
 
     function postGenerator(){
     	var storedPosts = getStoredPosts();
-    	postDeck.innerHTML = templates.renderPosts(storedPosts)
+    	postDeck[0].innerHTML = templates.renderPosts(storedPosts)
     }
 
 postGenerator();
@@ -213,7 +213,22 @@ postGenerator();
 
 window.addEventListener("click",function(e){
 	if(e.target.id=="logo"){
-		window.scrollTo(0,0);
+		$("body").animate({scrollTop:0}, '500', 'swing')
+	} else if (e.target.innerHTML=="add"){
+		console.log(e.target.id);
+		postDeck.eq(0).addClass("inactive");
+		newPostCard.eq(0).removeClass("inactive");
+	} else if (e.target.id=="submit_post"){
+		var current_rose = $("#text_rose")[0];
+		var current_thorn = $("#text_thorn")[0];
+		var current_bud = $("#text_bud")[0];
+		var current_name = $("#text_name")[0];
+
+		var currentPosts = getStoredPosts();
+		console.log(currentPosts);
+		console.log({"rose":current_rose.value, "thorn":current_thorn.value, "bud":current_bud.value, "name":current_name.value});
+		// currentPosts.unshift([{"rose":current_rose.value, "thorn":current_thorn.value, "bud":current_bud, "name":current_name.value}]);
+		
 	}
 	
 })
@@ -222,7 +237,7 @@ window.addEventListener("click",function(e){
 
 
 $('.modal-trigger').leanModal({
-	ready: function(){$("#main_container").eq(0).addClass("noscroll").css("position","absolute")},
+	ready: function(){$("#main_container").eq(0).addClass("noscroll").css({"position":"absolute", "top":0, "bottom":0})},
 	complete: function(){$("#main_container").eq(0).removeClass("noscroll").css("position","")}
 });
 

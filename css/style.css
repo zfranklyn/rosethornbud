@@ -64,6 +64,9 @@ body{
 	overflow-y:hidden;
 }
 
+#new-post-card{
+}
+
 .overlay{
 	position: absolute;
 	top:0;

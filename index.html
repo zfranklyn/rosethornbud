@@ -17,56 +17,59 @@
 
 	<body>
 		<div id="main_container">
-			<div class="navbar-fixed">
+			<div class="navbar-fixed red">
 				<nav>
 					<object data="img/roselogo.svg" type="image/svg+xml" id="logo" class="brand-logo center"></object>
 				</nav>
 			</div>
 
-			<a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" id="new_post_button" href="#newpost"><i class="material-icons">add</i></a>
+			<a class="btn-floating btn-medium waves-effect waves-light red" id="new_post_button" href="#newpost"><i class="material-icons">add</i></a>
 
 		    <div id="content">
 		    </div>
 
-		    <div class="modal" id="newpost">
-				<div class="card">
-		            <form class="form" id="post-form">
-		            	<div class="card-content">
-		                	<span>Welcome to your garden!</span>
-		            	</div>
-		                <div class="container card-content left">
-			                <div class="input-field col">
-			                	<span class="icon red-text">ROSE</span>
-			                    <textarea 
-			                    	id="text_rose" 
-			                    	class="materialize-textarea"
-			                    	placeholder="What went well today?"></textarea>
-			                </div>
-
-			                <div class="input-field col">
-			                	<span class="icon brown-text">THORN</span>
-			                    <textarea 
-			                    	id="text_thorn" 
-			                    	class="materialize-textarea" 
-			                    	placeholder="What didn't go so well today??"></textarea>
-			                </div>
-
-			                <div class="input-field col">
-			                	<span class="icon green-text">BUD</span>
-			                    <textarea 
-			                    	id="text_bud" 
-			                    	class="materialize-textarea" 
-			                    	placeholder="What are you looking forward to?"></textarea>
-			                </div>
-
-			                <input type="submit" class="btn right" value="Submit" /> 
+			<div class="card inactive" id="new-post-card">
+	            <form class="form" >
+	            	<div class="card-content">
+	                	<h4>Welcome to your garden!</h4>
+	            	</div>
+	                <div class="container card-content left">
+		                <div class="input-field col">
+		                	<span class="icon red-text">ROSE</span>
+		                    <textarea 
+		                    	id="text_rose" 
+		                    	class="materialize-textarea"
+		                    	placeholder="What went well today?"></textarea>
 		                </div>
 
-		                
-		            </form>
+		                <div class="input-field col">
+		                	<span class="icon brown-text">THORN</span>
+		                    <textarea 
+		                    	id="text_thorn" 
+		                    	class="materialize-textarea" 
+		                    	placeholder="What didn't go so well today??"></textarea>
+		                </div>
 
-	            </div>
-		    </div>
+		                <div class="input-field col">
+		                	<span class="icon green-text">BUD</span>
+		                    <textarea 
+		                    	id="text_bud" 
+		                    	class="materialize-textarea" 
+		                    	placeholder="What are you looking forward to?"></textarea>
+		                </div>
+
+		                <div class="input-field col">
+		                	<span class="icon gray-text">CAST BY</span>
+		                    <textarea 
+		                    	id="text_name" 
+		                    	class="materialize-textarea" 
+		                    	placeholder="Anonymous"></textarea>
+		                </div>
+		                <input type="submit" class="btn right" id="submit_post" value="Submit" /> 
+	                </div>
+	            </form>
+            </div>
+
 
 		</div>
 	</body>
