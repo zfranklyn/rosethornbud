@@ -25,7 +25,8 @@ body{
 	#new_post_button{
 		position:fixed;
 		right:30px;
-		bottom:30px;
+		top:15px;
+		font-size: 10px;
 	}
 
 	.icon{
@@ -42,6 +43,10 @@ body{
 
 	.post-data-name{
 		padding-right:10px;
+	}
+
+	.selected{
+		outline: white solid 1px;
 	}
 
 /*content*/

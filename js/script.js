@@ -3,6 +3,7 @@
 	var postTemplate = $("#post-template")[0];
 	var logo = $("#logo")[0];
 	var newPostCard = $("#new-post-card");
+	var newPostButton = $("#new_post_button");
 
     var templates = {
         renderPosts: Handlebars.compile(postTemplate.innerHTML)
@@ -216,8 +217,9 @@ window.addEventListener("click",function(e){
 		$("body").animate({scrollTop:0}, '500', 'swing')
 	} else if (e.target.innerHTML=="add"){
 		console.log(e.target.id);
-		postDeck.eq(0).addClass("inactive");
-		newPostCard.eq(0).removeClass("inactive");
+		postDeck.eq(0).toggle("fast");
+		newPostCard.eq(0).toggle();
+		newPostButton.eq(0).toggleClass("selected");
 	} else if (e.target.id=="submit_post"){
 		var current_rose = $("#text_rose")[0];
 		var current_thorn = $("#text_thorn")[0];
