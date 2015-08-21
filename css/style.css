@@ -17,16 +17,16 @@ body{
 	src: url("fonts/material-design-icons/Material-Design-Icons.eot");
 }
 
-	#logo{
-		margin-top:7px;
-		height:40px;
-	}
+#nav nav{
+	background-color:#E2474A;
+}
 
-	#new_post_button{
-		position:fixed;
-		right:30px;
-		top:15px;
-		font-size: 10px;
+#logo{
+	margin-top:2px;
+	height:48px;
+}
+
+	#new-post-button{
 	}
 
 	.icon{
@@ -46,7 +46,7 @@ body{
 	}
 
 	.selected{
-		outline: white solid 1px;
+		opacity: 1.0;
 	}
 
 /*content*/

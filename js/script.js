@@ -2,8 +2,9 @@
 	var postDeck = $("#content");
 	var postTemplate = $("#post-template")[0];
 	var logo = $("#logo")[0];
+	var navBar = $("#nav");
 	var newPostCard = $("#new-post-card");
-	var newPostButton = $("#new_post_button");
+	var newPostButton = $("#new-post-button");
 
     var templates = {
         renderPosts: Handlebars.compile(postTemplate.innerHTML)
@@ -210,14 +211,16 @@
 
 postGenerator();
 
-// console.log({posts:getStoredPosts()})
-
-window.addEventListener("click",function(e){
+navBar[0].addEventListener("click",function(e){
+	console.log("e.target is: "+e.target.className);
 	if(e.target.id=="logo"){
+		console.log("logo has been clicked");
 		$("body").animate({scrollTop:0}, '500', 'swing')
-	} else if (e.target.innerHTML=="add"){
-		console.log(e.target.id);
-		postDeck.eq(0).toggle("fast");
+		newPostCard.eq(0).hide();
+		postDeck.eq(0).show();
+	} else if (e.target.id=="new-post-button" || e.target.innerHTML=="add"){
+		console.log("add post button has been clicked");
+		postDeck.eq(0).toggle();
 		newPostCard.eq(0).toggle();
 		newPostButton.eq(0).toggleClass("selected");
 	} else if (e.target.id=="submit_post"){
@@ -238,10 +241,10 @@ window.addEventListener("click",function(e){
 
 
 
-$('.modal-trigger').leanModal({
-	ready: function(){$("#main_container").eq(0).addClass("noscroll").css({"position":"absolute", "top":0, "bottom":0})},
-	complete: function(){$("#main_container").eq(0).removeClass("noscroll").css("position","")}
-});
+// $('.modal-trigger').leanModal({
+// 	ready: function(){$("#main_container").eq(0).addClass("noscroll").css({"position":"absolute", "top":0, "bottom":0})},
+// 	complete: function(){$("#main_container").eq(0).removeClass("noscroll").css("position","")}
+// });
 
 
 
