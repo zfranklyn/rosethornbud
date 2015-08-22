@@ -2,19 +2,77 @@
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.timeago.js" type="text/javascript"></script>
+		<script src="js/materialize.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/grids-responsive-min.css">
+		<!-- Compiled and minified JavaScript -->
+  		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script> -->
+
+  		
+          
 	</head>
 
-	<body>
-		<div id="nav">
-			<object data="img/roselogo.svg" type="image/svg+xml" id="logo" class=""></object>
-			<!-- <object data="img/add.svg" type="image/svg+xml" id="add"></object> -->
+	<body class="">
+
+
+		<div class="navbar-fixed">
+			<nav>
+				<object data="img/roselogo.svg" type="image/svg+xml" id="logo" class="brand-logo center"></object>
+			</nav>
 		</div>
 
+		<a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" id="new_post_button" href="#newpost"><i class="material-icons">add</i></a>
+
+
 	    <div id="content" class="pure-g">
+	    </div>
+
+	    <div class="modal" id="newpost">
+			<div class="card">
+	            <form class="form" id="post-form">
+	            	<div class="card-content">
+	                	<span>Welcome to your garden!</span>
+	            	</div>
+	                <div class="card-content left">
+		                <div class="input-field col">
+		                	<span class="icon red-text">ROSE</span>
+		                    <textarea 
+		                    	id="text_rose" 
+		                    	class="materialize-textarea" 
+		                    	placeholder="What went well today?"></textarea>
+		                </div>
+
+		                <div class="input-field col">
+		                	<span class="icon brown-text">THORN</span>
+		                    <textarea 
+		                    	id="text_thorn" 
+		                    	class="materialize-textarea" 
+		                    	placeholder="What didn't go so well today??"></textarea>
+		                </div>
+
+		                <div class="input-field col">
+		                	<span class="icon green-text">BUD</span>
+		                    <textarea 
+		                    	id="text_bud" 
+		                    	class="materialize-textarea" 
+		                    	placeholder="What are you looking forward to?"></textarea>
+		                </div>
+
+		                <input type="submit" class="btn" value="Submit" /> 
+	                </div>
+
+	                
+	            </form>
+
+            </div>
+
 
 	    </div>
+
+
 
 <!-- HANDLEBARS TEMPLATES -->
         <script type="text/x-handlebars-template" id="post-template">
@@ -22,19 +80,23 @@
                 {{#each posts}}
                 {{! this.id represents this question&#39;s identifier in
                     localStorage. }}
-                <div class="post pure-u-1 pure-u-md-1-3" id="{{ this.id }}">
-                    <div class="petal rose">
-						<object data="img/rose.svg" type="image/svg+xml" id="rose" class="posticon"></object>
-                    	<span class="">{{ this.rose }}</span>
+                <div class="card" id="{{ this.id }}">
+                    <div class="card-content petal rose">
+						<span class="icon red-text">ROSE:</span>
+                		<span class="">{{ this.rose }}</span>
                     </div>
-                	<div class="petal thorn">
-                    	<object data="img/thorn.svg" type="image/svg+xml" id="thorn" class="posticon"></object>
+                	<div class="card-content petal thorn">
+                    	<span class="icon brown-text">THORN:</span>
                     	<span class="">{{ this.thorn }}</span>
                     </div>
-                    <div class="petal bud">
-                    	<object data="img/bud.svg" type="image/svg+xml" id="bud" class="posticon"></object>
+                    <div class="card-content petal bud">
+                    	<span class="icon green-text">BUD:</span>
                     	<span class="">{{ this.bud }}</span>
                     </div>
+                	<div class="post-data">
+                		<span class="post-data-name">{{ this.name }}</span>
+                		<span class="post-data-min">2 mins</span>
+                	</div>                    
                 </div>
                 {{/each}}
             {{else}}
@@ -45,8 +107,32 @@
             {{/if}}
         </script>
 
-		<script src="scripts/handlebars-v3.0.1.js"></script>
-		<script src="scripts/script.js"></script>        
+        <!-- template to display question form in #main-panel tag -->
+        <script type="text/x-handlebars-template" id="post-submission-template">
+            <form class="cf" id="submission-form">
+                <h2>Hey there!</h2>
+                <p>Welcome to the garden!</p>
+                <div>
+                    <textarea rows="5" cols="40" name="rose"
+                        placeholder="What was your Rose today?"></textarea>
+                </div>
+
+                <div>
+                    <textarea rows="5" cols="40" name="thorn"
+                        placeholder="What was your Thorn today?"></textarea>
+                </div>
+
+                <div>
+                    <textarea rows="5" cols="40" name="bud"
+                        placeholder="What is your Bud today?"></textarea>
+                </div>
+
+                <input type="submit" class="btn" value="Submit" /> 
+            </form>
+        </script>        
+
+		<script src="js/handlebars-v3.0.1.js"></script>
+		<script src="js/script.js"></script>  
 
 	</body>
 
